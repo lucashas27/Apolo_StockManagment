@@ -1,7 +1,7 @@
 <?php
 
-require_once './index.php';
-require_once './Cliente.php';
+require_once './views/index.php';
+require_once './class/Cliente.php';
 
 
     // use ISSET as a shortly way to write array_key_exist() 
@@ -44,8 +44,10 @@ require_once './Cliente.php';
     var_dump ($cliente1::$CriadoEm);
 
 
-require './connect.php';
 
+function insertDatabase() {
+
+require './connect.php';
     try {
         $pdo = new PDO($DB_INFO, $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -59,3 +61,4 @@ require './connect.php';
       } catch(PDOException $e) {
         echo 'Erro: ' . $e->getMessage();
       }
+    }
