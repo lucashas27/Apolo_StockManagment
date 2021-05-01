@@ -7,23 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    
 
-
-
-
-
-
-
-
-
-
-
-
+<div class="form_cadastro">
 <!-- FORM CADASTRO CLIENTES  -->
-
-
-<form action="validation.php" method="post">
+<form action="../insert.php" method="post">
   <p> Nome: <input type="text" name="name" /></p>
   <p> Idade: <input type="number" name="age" /></p>
 <div class="gender">
@@ -35,22 +22,12 @@
 <input type="radio" id="other" name="gender" value="other">
 <label for="other">Outros</label>
 </div>
-
   <p> Endereço: <input type="text" name="adress" /></p>
   <p> CPF: <input type="number" name="cpf" /></p>
-  <p><input type="submit" /></p>
+  <p><input type="submit"/></p>
+  </div>
+
+  
 </form>
-
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

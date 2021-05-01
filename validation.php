@@ -32,33 +32,11 @@ require_once './class/Cliente.php';
     }
 
 
-    $cliente1 = new Cliente($name, $age, $gender, $adress, 123123);
-    $nomeCliente1 = $cliente1->getNome();
-    if ($nomeCliente1 === 'Lucas') {
-        echo 'Bem vindo Lucas';
-    } else {
-        echo 'Você não é o Lucas';
-    }
- 
-    var_dump ($cliente1);
-    var_dump ($cliente1::$CriadoEm);
+//     $cliente1 = new Cliente($name, $age, $gender, $adress, 123123);
+//   $nomeLucas = $cliente1->getNome();
+//   $idadeLucas = $cliente1->getIdade();
+
+//   var_dump($nomeLucas);
 
 
 
-function insertDatabase() {
-
-require './connect.php';
-    try {
-        $pdo = new PDO($DB_INFO, $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      
-        $stmt = $pdo->prepare('INSERT INTO cliente (nome) VALUES(:nome)');
-        $stmt->execute(array(
-          ':nome' => 'Lucas'
-        ));
-       
-        echo $stmt->rowCount();
-      } catch(PDOException $e) {
-        echo 'Erro: ' . $e->getMessage();
-      }
-    }
