@@ -14,7 +14,9 @@
 
 
 
-
+<?php 
+require '../controllers/insert.php'
+?>
 
 
 
@@ -23,7 +25,7 @@
 <!-- FORM CADASTRO CLIENTES  -->
 
 
-<form action="validation.php" method="post">
+<form action="../controllers/validation.php" method="post">
   <p> Nome: <input type="text" name="name" /></p>
   <p> Idade: <input type="number" name="age" /></p>
 <div class="gender">
@@ -38,7 +40,7 @@
 
   <p> Endereço: <input type="text" name="adress" /></p>
   <p> CPF: <input type="number" name="cpf" /></p>
-  <p><input type="submit" /></p>
+  <p><input type="submit"></p>
 </form>
 
 

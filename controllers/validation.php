@@ -1,8 +1,8 @@
 <?php
 
-require_once './views/index.php';
+require_once '../views/index.php';
 require_once './class/Cliente.php';
-
+// require './insert.php';
 
     // use ISSET as a shortly way to write array_key_exist() 
     // [VERIFICA SE A ARRAY EXISTE]
@@ -40,25 +40,21 @@ require_once './class/Cliente.php';
         echo 'Você não é o Lucas';
     }
  
-    var_dump ($cliente1);
-    var_dump ($cliente1::$CriadoEm);
+var_dump($nomeCliente1->name);
+die;
 
 
-
-function insertDatabase() {
-
-require './connect.php';
     try {
         $pdo = new PDO($DB_INFO, $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
         $stmt = $pdo->prepare('INSERT INTO cliente (nome) VALUES(:nome)');
         $stmt->execute(array(
-          ':nome' => 'Lucas'
+          ':nome' => 'Lucas',
         ));
        
         echo $stmt->rowCount();
       } catch(PDOException $e) {
         echo 'Erro: ' . $e->getMessage();
       }
-    }
+    
