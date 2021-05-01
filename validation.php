@@ -8,8 +8,8 @@ require_once './class/Cliente.php';
     // [VERIFICA SE A ARRAY EXISTE]
 
     if (isset($_POST['name'])) {
-        $name = $_POST['name'];
-    } else {
+        $name = $_POST['name'] = preg_replace('/[^[:alnum:]_]/', '',$_POST['name']); 
+    } else {    // o preg_replaca (alnum) irá eliminar todos os caracteres epeciais
         $name = '';
     }
 
@@ -20,13 +20,13 @@ require_once './class/Cliente.php';
     }
 
     if (isset($_POST['gender'])) {
-        $gender = $_POST['gender'];
+        $gender = $_POST['gender'] = preg_replace('/[^[:alnum:]_]/', '',$_POST['gender']);
     } else {
         $gender = '';
     }
 
     if (isset($_POST['adress'])) {
-        $adress = $_POST['adress'];
+        $adress = $_POST['adress'] = preg_replace('/[^[:alnum:]_]/', '',$_POST['adress']);
     } else {
         $adress = '';
     }
